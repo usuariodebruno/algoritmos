@@ -6,6 +6,8 @@ struct array_list_int {
   unsigned int size, capacity;
 };
 
+int increase_memory(struct array_list_int *list);
+
 struct array_list_int *array_list_create();
 
 int array_list_get(struct array_list_int *list, int index, int *error);
