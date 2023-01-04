@@ -25,8 +25,20 @@ struct array_list_int {
  * \todo Implement function correctly
  */
 
-int increase_memory(array_list_int *list) { 
+int increase_memory(array_list_int *list, int ) { 
   return 0; 
+}
+
+int increase_memory(struct array_list_int *list) {
+    int *new_mem = (int*) malloc(sizeof(int) * (list->capacity));
+    int *old_mem = list->data;
+
+    for (int i = 0; i<list->size; ++i) {
+        *(new_mem+i) = *(old_mem+i);
+    }
+    list->data = new_mem;
+    free(old_mem);
+    return 0;
 }
 
 array_list_int *array_list_create() {
@@ -87,32 +99,38 @@ int array_list_find(array_list_int *list, int element) {
 
 /**
  * \todo Implement function
+ * 
+ * receber um ponteiro para nao haver uma copia da estrutura do struct 
  */
 unsigned int array_list_insert_at(array_list_int *list, int index, int value) {
   return array_list_size(list);
 }
 
 /**
- * \todo Implement function
+ * \todo Implement function !!!!!!
  */
 unsigned int array_list_remove_from(array_list_int *list, int index) {
+
   return array_list_size(list);
 }
 
+//Retorna a capacidade do array
 unsigned int array_list_capacity(array_list_int *list) {
-  return list->capacity; // ACESSANDO ATRIBUTO DO PONTEIRO 
+  return list->capacity; // ACESSANDO ATRIBUTO DO STRUCT POR PONTEIRO 
 }
 
 /**
- * \todo Implement function
+ * \todo Retorna a porcetagem ocupada do array em relação a sua capacidade
  */
 double array_list_percent_occupied(array_list_int *list) {
-  
-  return 0.0; 
+  return (array_list_size(list)/array_list_capacity(list))*100; // (tamanho/capacidae)*100
    
 }
 
 /**
- * \todo Implement function
+ * \todo libera a memoria 
  */
-void array_list_destroy(array_list_int *list) {}
+void array_list_destroy(array_list_int *list) {
+  free(list->data); // liberando do ponteiro que endereço de memoria que contem uma struct  
+  free(list); // liberando memoria de uma struct
+}

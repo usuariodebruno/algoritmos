@@ -13,6 +13,7 @@ void error_at_insertion(array_list_int *l, int x) {
 /* Imprime a lista na saída padrão. */
 void print_vector(array_list_int *l) {
   int i, x, erro;
+
   for (i = 0; i < array_list_size(l); ++i) {
     x = array_list_get(l, i, &erro);
     if (!erro) {
@@ -21,6 +22,7 @@ void print_vector(array_list_int *l) {
       fprintf(stderr, "ERRO: índice %d não é válido!\n", i);
       exit(2);
     }
+
   }
   printf("\n");
 }
@@ -28,10 +30,10 @@ void print_vector(array_list_int *l) {
 int main() {
   time_t inicio, fim;
   int n, i, x;
-  
   array_list_int *l01 = array_list_create();
   scanf("%d", &n);
   inicio = time(0);
+
   for (i = 0; i < n; ++i) {
     scanf("%d", &x);
     /* array_list_push_back retorna o novo tamanho da lista. 
@@ -43,8 +45,10 @@ int main() {
     }
   }
   fim = time(0);
+
   fprintf(stderr, "Inserção de %d elementos em %.4lf milissegundos.\n", n,
           (((double)fim - (double)inicio) / CLOCKS_PER_SEC) * 1000);
+
   printf("Tamanho do vetor: %d\n", array_list_size(l01));
   print_vector(l01);
   return 0;
