@@ -12,12 +12,9 @@ struct aluno{
 void ler_dados(int qtd, struct aluno *alunos){ 
     int i, j;
     for ( i = 0; i < qtd ; ++i){
-        printf("Matricula de aluno\n");
         scanf("%lld", &alunos[i].matriculas);
-        printf("Quantidade de notas\n");
         scanf("%d",&alunos[i].qtd_notas);
         for (j = 0; j < alunos[i].qtd_notas; ++j){
-            printf("Nota | Peso\n");
             scanf ("%d %d", &alunos[i].notas[j], &alunos[j].pesos[j]);
         }        
     }    
@@ -29,7 +26,7 @@ void mostrar_dados(int qtd, struct aluno *alunos){
         printf("%lld", alunos[i].matriculas); //não quebra linha 
         printf("%d = { ",alunos[i].qtd_notas);
         for (j = 0; j < alunos[i].qtd_notas; ++j){
-            printf ("%d %d | ",alunos[i].notas[j],alunos[j].pesos[j]);
+            printf ("%d %d",alunos[i].notas[j],alunos[j].pesos[j]);
         }
     printf(" }\n");
     }    
@@ -54,7 +51,6 @@ int calcular_media_turma(int qtd,  struct aluno alunos[]){ //RECEBENDO AGORA COM
 
 int main(){
     int qtd_alunos;
-    printf("Quantidade de aluno\n");
     scanf("%d", &qtd_alunos);
 
     // struct de array 
