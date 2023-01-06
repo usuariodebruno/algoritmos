@@ -3,8 +3,8 @@
  * 
  *  \brief C dynamic array of int values library
  *
- * \author
- * \date:
+ * \author @Bruno_Almeida
+ * \date: 09/01/2023
  *
  */
 #ifndef _ARRAY_LIST_INT_H_ 
@@ -18,7 +18,7 @@ typedef struct array_list_int array_list_int;
  * \return A pointer to a new list of int structure. 
  */
 
-array_list_int * array_list_create();
+array_list_int *array_list_create();
 
 /**
  * \brief  Gets the value stored on index 'index'
@@ -74,7 +74,7 @@ int array_list_find(array_list_int * list, int element);
  * 
  * \param list  A pointer to the list structure.
  * \param index The index where to insert the element. Must be in the range [0..size]
- * \param value The int value to insert
+ * \param value The int value to ins e rt
  * \return unsigned int The new size of the list.
  * \todo Implement function.
  */

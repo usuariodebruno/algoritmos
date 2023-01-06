@@ -27,7 +27,8 @@ struct array_list_int {
 
 int increase_memory(array_list_int *list, int ) { 
   return 0; 
-}
+}// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 int increase_memory(struct array_list_int *list) {
     int *new_mem = (int*) malloc(sizeof(int) * (list->capacity));
@@ -123,7 +124,7 @@ unsigned int array_list_capacity(array_list_int *list) {
  * \todo Retorna a porcetagem ocupada do array em relação a sua capacidade
  */
 double array_list_percent_occupied(array_list_int *list) {
-  return (array_list_size(list)/array_list_capacity(list))*100; // (tamanho/capacidae)*100
+  return (array_list_size(list)/array_list_capacity(list)); // (tamanho/capacidae)*100
    
 }
 
