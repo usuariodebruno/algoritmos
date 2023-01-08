@@ -10,7 +10,7 @@
 #ifndef _ARRAY_LIST_INT_H_ 
 #define _ARRAY_LIST_INT_H_
 
-typedef struct array_list_int array_list_int;
+//typedef struct array_list_int array_list_int;
 
 /**
  * \brief Create a new list of int numbers.
@@ -18,7 +18,8 @@ typedef struct array_list_int array_list_int;
  * \return A pointer to a new list of int structure. 
  */
 
-array_list_int *array_list_create();
+struct array_list_int* array_list_create(int quantidade);
+
 
 /**
  * \brief  Gets the value stored on index 'index'
@@ -28,7 +29,7 @@ array_list_int *array_list_create();
  * \param error A pointer to an integer to set error if it occur.
  * \return int The value stored on index 'index'
  */
-int array_list_get(array_list_int * list, int index, int *error);
+int array_list_get(struct array_list_int* list, int index, int *error);
 
 /**
  * \brief  Appends a new element to the end of the list.
@@ -37,7 +38,7 @@ int array_list_get(array_list_int * list, int index, int *error);
  * \param value The value to be appended to 'list'
  * \return unsigned int 
  */
-unsigned int array_list_push_back(array_list_int * list, int i);
+unsigned int array_list_push_back(struct array_list_int* list, int i);
 
 /**
  * \brief Removes the last element of the list.
@@ -45,7 +46,7 @@ unsigned int array_list_push_back(array_list_int * list, int i);
  * \param list A pointer to the list structure
  * \return unsigned int The total number of elements after removing the last one.
  */
-unsigned int array_list_pop_back(array_list_int * list);
+unsigned int array_list_pop_back(struct array_list_int* list);
 
 /**
  * \brief Gets the total number of values stored on the list 'list'
@@ -53,7 +54,7 @@ unsigned int array_list_pop_back(array_list_int * list);
  * \param list A pointer to the list structure.
  * \return unsigned int The total number of elements stored on 'list'.
  */
-unsigned int array_list_size(array_list_int * list);
+unsigned int array_list_size(struct array_list_int* list);
 
 /**
  * \brief  Gets the index of  element 'element'.
@@ -63,7 +64,7 @@ unsigned int array_list_size(array_list_int * list);
  * \return int  The index of element 'element' if element is in the range [0..size−1].
  * \todo Implement function.
  */
-int array_list_find(array_list_int * list, int element);
+int array_list_find(struct array_list_int* list, int element);
 
 
 /**
@@ -78,7 +79,7 @@ int array_list_find(array_list_int * list, int element);
  * \return unsigned int The new size of the list.
  * \todo Implement function.
  */
-unsigned int array_list_insert_at(array_list_int * list, int index, int value);
+unsigned int array_list_insert_at(struct array_list_int *list, int index, int value);
 
 
 /**
@@ -90,7 +91,7 @@ unsigned int array_list_insert_at(array_list_int * list, int index, int value);
  * \return unsigned int The new size of the list.
  * \todo Implement function.
  */
-unsigned int array_list_remove_from(array_list_int * list, int index);
+unsigned int array_list_remove_from(struct array_list_int* list, int index);
 
 
 /**
@@ -99,7 +100,7 @@ unsigned int array_list_remove_from(array_list_int * list, int index);
  * \param list The list to get capacity.
  * \return unsigned int The total amount of space fot 'list'.
  */
-unsigned int array_list_capacity(array_list_int * list);
+unsigned int array_list_capacity(struct array_list_int* list);
 
 
 /**
@@ -109,7 +110,7 @@ unsigned int array_list_capacity(array_list_int * list);
  * \return double A number between 0.0 and 1.0, representing the 
  * total space used as a percent from the reserved space. 
  */
-double array_list_percent_occupied(array_list_int * list); 
+double array_list_percent_occupied(struct array_list_int* list); 
 
 /**
  * \brief Release total memory space reserved from 'list'
@@ -117,6 +118,6 @@ double array_list_percent_occupied(array_list_int * list);
  * \param list The list to be released
  * \todo
  */
-void array_list_destroy(array_list_int * list); 
+void array_list_destroy(struct array_list_int* list); 
 
 #endif

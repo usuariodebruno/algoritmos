@@ -4,14 +4,14 @@
 #include <time.h>
 
 /* Mostra valor não inserido e sai do programa.*/
-void error_at_insertion(array_list_int *l, int x) {
+void error_at_insertion(struct array_list_int* l, int x) {
   fprintf(stderr, "\033[0;31mErro:\033[0m:\tValor %d não inserido!\n", x);
   fprintf(stderr, "\tA lista possui %d elementos.\n", array_list_size(l));
   exit(1);
 }
 
 /* Imprime a lista na saída padrão. */
-void print_vector(array_list_int *l) {
+void print_vector(struct array_list_int* l) {
   int i, x, erro;
 
   for (i = 0; i < array_list_size(l); ++i) {
@@ -30,20 +30,21 @@ void print_vector(array_list_int *l) {
 int main() {
   time_t inicio, fim;
   int n, i, x;
-  array_list_int *l01 = array_list_create();
   scanf("%d", &n);
+  struct array_list_int* l01 = array_list_create(n);  
   inicio = time(0);
 
-  for (i = 0; i < n; ++i) {
+
+  /*for (i = 0; i < n; ++i) {
     scanf("%d", &x);
     /* array_list_push_back retorna o novo tamanho da lista. 
        Se não houve inserção o tamanho não será (i+1). 
        O programa então mostra que não inseriu e termina.
-       */
+       */ /*
     if (array_list_push_back(l01, x) != (i + 1)) {
       error_at_insertion(l01, x);
-    }
-  }
+    } 
+  } */
   fim = time(0);
 
   fprintf(stderr, "Inserção de %d elementos em %.4lf milissegundos.\n", n,

@@ -8,7 +8,7 @@ int main() {
         e &ponteiro = seria uma instrução inválida.
     */
     int var = 50; 
-    int *p;         // Aloca um espaço de memória para armazenar um ponteiro apontando com valor null; 
+    int* p;         // Aloca um espaço de memória para armazenar um ponteiro apontando com valor null; 
     p = &var;         // Ponteiro recebe endereço de memoria (&var) da variavel int var 
 
     /*
@@ -19,7 +19,7 @@ int main() {
     */ 
     printf("Valor de *p: { %d  }\n",*p);     //int 50 
     printf("Valor de p:  { %p }\n",p);      //0x0061FF1C Endereço do memoria de (&a)
-    printf("Endereco de p:{ %p }\n\n\n", &p); //0x00255100  ??????????? 
+    printf("Endereco de p:{ %p }\n\n\n", &p); //0x00255100 Endereço de memória do ponteiro
 
 
     printf("Valor de var:     %d\n", var); 
