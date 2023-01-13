@@ -18,7 +18,6 @@ int increase_memory(struct array_list_int *list) {
     return list->data; //Retorna novo ponteiro realocado 
 }
 
-
 struct array_list_int* array_list_create(int start_size_int) {
   struct array_list_int* new_list = malloc(sizeof(struct array_list_int ));
   if (new_list == 0)

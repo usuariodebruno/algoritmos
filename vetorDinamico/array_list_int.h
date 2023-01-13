@@ -7,6 +7,9 @@ struct array_list_int {
   unsigned int size, capacity, starting_size;
 };
 
+//Incrementa a capadidade de armazenamento do vetor
+int increase_memory(struct array_list_int *list);
+
 //Cria uma nova lista, recebendo um tamanho inicial e retorna o ponteiro para o espaço de memoria inicial dessa lista (OK)
 struct array_list_int* array_list_create(int starting_size);
 
@@ -22,11 +25,11 @@ unsigned int array_list_capacity(struct array_list_int* list);
 //Calcula a pocentagem ocupada de uma lista e retorna com decimal 'type double' (OK)
 double array_list_percent_occupied(struct array_list_int* list);
 
-//Busca de elemento por index e retorna int elemento (OK)
-int array_list_get(struct array_list_int *list, int index, int *error);
-
 //Remove o ultimo indice da lista(OK)
 unsigned int array_list_pop_back(struct array_list_int *list);
+
+//Busca de elemento por index e retorna int elemento (OK)
+int array_list_get(struct array_list_int *list, int index, int *error);
 
 // Busca um elemento na lista. Retorna o índice onde ele se encontra ou −1 se ele não estiver na lista.  (OK)
 int array_list_find( struct array_list_int * list, int element);

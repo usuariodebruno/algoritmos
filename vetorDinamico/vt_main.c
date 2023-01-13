@@ -72,5 +72,14 @@ int main () {
     over = clock();
     printf("[ Array_List_Destroy |  %1fms ]\n", (over-start)/(CLOCKS_PER_SEC/1000.0));
     
+    start = clock();
+    printf("[ Array_List_Size |  %1fms | Size: %d ]\n", (over-start)/(CLOCKS_PER_SEC/1000.0), array_list_size(l01));
+    over = clock();
+
+    start = clock();
+    printf("[ Array_List_Destroy |  %1fms | Capacity: %d ]\n", (over-start)/(CLOCKS_PER_SEC/1000.0), array_list_capacity(l01));
+    over = clock();
+   
+
     return 0;
 }
